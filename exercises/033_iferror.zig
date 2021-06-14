@@ -31,9 +31,12 @@ pub fn main() void {
         var n = numberMaybeFail(num);
         if (n) |value| {
             std.debug.print("=4. ", .{});
-        } else |err| switch (err) {
-            MyNumberError.TooBig => std.debug.print(">4. ", .{}),
-            // Please add a match for TooSmall here and have it print: "<4. "
+        } else |err| {
+            switch (err) {
+                MyNumberError.TooBig => std.debug.print(">4. ", .{}),
+                // Please add a match for TooSmall here and have it print: "<4. "
+                MyNumberError.TooSmall => std.debug.print("<4. ", .{}),
+            }
         }
     }
 
