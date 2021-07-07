@@ -46,7 +46,7 @@
 const print = @import("std").debug.print;
 
 pub fn main() void {
-    foo();
+    _ = async foo();
 }
 
 fn foo() void {
